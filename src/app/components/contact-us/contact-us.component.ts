@@ -10,6 +10,7 @@ export class ContactUsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.document.title = 'SwiftHouse - Contact Us';
   }
 
 }

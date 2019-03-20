@@ -10,6 +10,7 @@ export class PricingComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.document.title = 'SwiftHouse - Pricing';
   }
 
 }
