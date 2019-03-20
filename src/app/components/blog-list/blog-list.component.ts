@@ -21,7 +21,8 @@ export class BlogListComponent implements OnInit {
         id: 'Upgrading-to-Angular-7-From-Pains-to-Gains',
         title: 'Upgrading to Angular 7: From Pains, to Gains!',
         image: 'https://offerzen.ghost.io/content/images/2019/03/Jason_Powerful-sword_Best-tool-for-the-job_Cover-image.png',
-        intro: `There are many ways to upgrade an Angular application, and the wrong choice could be catastrophic to your project. Here's how I made the right choice.`
+        intro: `There are many ways to upgrade an Angular application, and the wrong choice could be catastrophic to your project.
+        Here's how I made the right choice.`
       },
       {
         id: 'permanent-vs-freelancing-making-the-tradeoff',
