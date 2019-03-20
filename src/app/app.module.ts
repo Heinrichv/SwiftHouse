@@ -14,12 +14,14 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { PricingComponent } from './components/pricing/pricing.component';
+import { BlogListComponent } from './components/blog-list/blog-list.component';
 
 const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'pricing', component: PricingComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'contact-us', component: ContactUsComponent },
+  { path: 'tech-blog', component: BlogListComponent },
   {
     path: '',
     redirectTo: '/home',
@@ -35,7 +37,8 @@ const appRoutes: Routes = [
     HomeComponent,
     AboutUsComponent,
     ContactUsComponent,
-    PricingComponent
+    PricingComponent,
+    BlogListComponent
   ],
   imports: [
     BrowserModule,
