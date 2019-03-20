@@ -10,6 +10,7 @@ export class PageNotFoundComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    window.document.title = 'SwiftHouse - 404';
   }
 
 }
