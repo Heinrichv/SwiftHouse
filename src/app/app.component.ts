@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import{Router, NavigationEnd} from '@angular/router';
-
-declare let gtag: Function;
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
+declare var ga;
 
 @Component({
   selector: 'swift-root',
@@ -11,15 +10,19 @@ declare let gtag: Function;
 })
 export class AppComponent implements OnInit {
 
-  constructor(public router: Router){   
-      this.router.events.subscribe(event => {
-         if(event instanceof NavigationEnd){
-             gtag('config', 'GTM-P9QKTV4', {
-               'page_path': event.urlAfterRedirects
-             });
-          }
-       }
-    )}
+  constructor(readonly router: Router) {
+    const navEndEvent$ = this.router.events.pipe(
+      filter(e => e instanceof NavigationEnd)
+    );
+
+    navEndEvent$.subscribe((e: NavigationEnd) => {
+      console.log(e);
+      ga('set', 'location', window.location.href);
+      ga('set', 'page', e.url);
+
+      ga('send', 'pageview', e.url);
+    });
+  }
 
   title = 'Swifthouse Web (Pty) Ltd';
 

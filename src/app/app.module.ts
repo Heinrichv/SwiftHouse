@@ -52,7 +52,7 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [{ provide: 'googleTagManagerId', useValue: 'GTM-P9QKTV4' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
